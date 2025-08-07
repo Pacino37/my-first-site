@@ -1,62 +1,75 @@
 <!-- Gallery Section -->
-<section id="gallery" class="p-10">
-  <h2 class="text-3xl font-semibold mb-8 text-center">Gallery</h2>
+<section id="gallery" class="p-10 bg-gray-900 text-white">
+  <h2 class="text-3xl font-semibold mb-8 text-center text-yellow-300">Gallery</h2>
+  
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="gallery-grid">
+
     <!-- Repeatable photo blocks -->
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo13.jpg" alt="Coca Cola Company Visit" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">Coca Cola Company Visit</p>
+      <img src="images/photo13.jpg" alt="Coca Cola Company Visit"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">Coca Cola Company Visit</p>
     </div>
 
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo2.jpg" alt="Opening Ceremony Of Afcfta" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">Opening Ceremony Of Afcfta</p>
+      <img src="images/photo2.jpg" alt="Opening Ceremony Of Afcfta"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">Opening Ceremony Of Afcfta</p>
     </div>
 
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo10.jpg" alt="Graduate in Marketing mgmt" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">Graduate in Marketing mgmt</p>
+      <img src="images/photo10.jpg" alt="Graduate in Marketing mgmt"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">Graduate in Marketing mgmt</p>
     </div>
 
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo4.jpg" alt="My Baptism" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">My Baptism</p>
+      <img src="images/photo4.jpg" alt="My Baptism"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">My Baptism</p>
     </div>
 
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo8.jpg" alt="God's Will Not Mine" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">God's Will Not Mine</p>
+      <img src="images/photo8.jpg" alt="God's Will Not Mine"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">God's Will Not Mine</p>
     </div>
 
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo17.jpg" alt="Accra At Night" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">Accra At Night</p>
+      <img src="images/photo17.jpg" alt="Accra At Night"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">Accra At Night</p>
     </div>
 
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo5.jpg" alt="12 Steps program" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">12 Steps program</p>
+      <img src="images/photo5.jpg" alt="12 Steps program"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">12 Steps program</p>
     </div>
 
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo9.jpg" alt="Love" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">Love</p>
+      <img src="images/photo9.jpg" alt="Love"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">Love</p>
     </div>
 
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo7.jpg" alt="Family" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">Family</p>
+      <img src="images/photo7.jpg" alt="Family"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">Family</p>
     </div>
 
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photo12.jpg" alt="Gratitude" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">Gratitude</p>
+      <img src="images/photo12.jpg" alt="Gratitude"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">Gratitude</p>
     </div>
 
-    <!-- Optional: remove or replace if photoX.jpg doesn't exist -->
+    <!-- Optional -->
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photoX.jpg" alt="Extra Image" class="rounded mb-2 gallery-item" />
-      <p class="text-yellow-300 font-semibold">Caption</p>
+      <img src="images/photoX.jpg" alt="Extra Image"
+        class="gallery-item" />
+      <p class="text-yellow-300 font-semibold mt-2">Caption</p>
     </div>
   </div>
 
@@ -66,6 +79,24 @@
   </div>
 </section>
 
+<!-- Gallery Styles -->
+<style>
+  .gallery-item {
+    width: 100%;
+    height: 12rem; /* same as h-48 */
+    object-fit: cover;
+    border: 3px solid #facc15; /* yellow-400 */
+    border-radius: 0.5rem; /* rounded */
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 255, 0, 0.3);
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<!-- Gallery Script -->
 <script>
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
