@@ -1,12 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My First Site</title>
+  <title>Pacino | Growth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Hello, I'm Pascal!</h1>
-  <p>This is my first web page as a back-end developer.</p>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Navbar -->
+  <nav class="p-6 flex justify-between items-center bg-gray-800 shadow">
+    <h1 class="text-3xl font-bold">PACINO</h1>
+    <div class="space-x-4">
+      <a href="#home" class="hover:text-yellow-400">Home</a>
+      <a href="#about" class="hover:text-yellow-400">About</a>
+      <a href="#gallery" class="hover:text-yellow-400">Gallery</a>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="p-10 text-center">
+    <h2 class="text-4xl font-bold mb-2">Welcome to Pacino's World of Growth</h2>
+    <p class="text-lg mb-6">Turning ideas into results, one deal at a time.</p>
+    <div class="flex justify-center space-x-4">
+      <a href="https://us05web.zoom.us/launch/chat?src=direct_chat_link&email=pacinot%40gmail.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">Zoom Call</a>
+      <a href="https://wa.me/233538642987?text=Hi%20Pacino!%20I%20visited%20your%20portfolio%20site." target="_blank" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="p-10 bg-gray-800">
+    <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+    <p class="max-w-2xl mx-auto text-lg">
+      Hi, I’m Pascal Tuyishime, a growth-driven sales and marketing professional. With extensive experience in business development, lead generation, and strategic campaigns, I help brands attract clients and increase revenue. From cold calls to closed deals, I turn ideas into results.
+    </p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="p-10">
+    <h2 class="text-3xl font-semibold mb-8 text-center">Gallery</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Photo 1 -->
+      <div class="bg-gray-800 p-4 rounded shadow">
+        <img src="images/photo1.jpg" alt="Afcfta" class="rounded mb-2" />
+        <p class="text-yellow-300 font-semibold">Selling Coffee</p>
+      </div>
+      <!-- Photo 2 -->
+      <div class="bg-gray-800 p-4 rounded shadow">
+        <img src="images/photo2.jpg" alt="Life everyday" class="rounded mb-2" />
+        <p class="text-yellow-300 font-semibold">Life Everyday</p>
+      </div>
+      <!-- Photo 3 -->
+      <div class="bg-gray-800 p-4 rounded shadow">
+        <img src="images/photo3.jpg" alt="Life everyday" class="rounded mb-2" />
+        <p class="text-yellow-300 font-semibold">Life Everyday</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 bg-gray-800 text-sm mt-10">
+    © 2025 Pacino. All rights reserved.
+  </footer>
 </body>
 </html>
