@@ -59,6 +59,22 @@
     </div>
 
   </div>
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const galleryImages = document.querySelectorAll('#gallery-grid img');
+
+  galleryImages.forEach(image => {
+    image.addEventListener('click', () => {
+      lightbox.innerHTML = `<img src="${image.src}" alt="">`;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightbox.innerHTML = '';
+  });
+</script>
 
   <!-- Lightbox for gallery -->
   <div class="lightbox" id="lightbox">
