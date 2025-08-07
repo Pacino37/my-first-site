@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pacino | Growth</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+      display: none;
+    }
+    .lightbox img {
+      max-height: 90vh;
+      max-width: 90vw;
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
   <!-- Navbar -->
@@ -24,6 +43,7 @@
     <div class="flex justify-center space-x-4">
       <a href="https://us05web.zoom.us/launch/chat?src=direct_chat_link&email=pacinot%40gmail.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">Zoom Call</a>
       <a href="https://wa.me/233538642987?text=Hi%20Pacino!%20I%20visited%20your%20portfolio%20site." target="_blank" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Chat on WhatsApp</a>
+      <a href="https://calendly.com/pacinot" target="_blank" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded">Schedule a Zoom</a>
     </div>
   </section>
 
@@ -38,22 +58,52 @@
   <!-- Gallery Section -->
   <section id="gallery" class="p-10">
     <h2 class="text-3xl font-semibold mb-8 text-center">Gallery</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Photo 1 -->
-      <div class="bg-gray-800 p-4 rounded shadow">
-        <img src="images/photo1.jpg" alt="Afcfta" class="rounded mb-2" />
-        <p class="text-yellow-300 font-semibold">Selling Coffee</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="gallery-grid">
+      <!-- Repeatable photo block -->
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo13.jpg" alt="Coca Cola Company Visit" class="rounded mb-2 gallery-item" />
+        <p class="text-yellow-300 font-semibold">Coca Cola Company Visit</p>
       </div>
-      <!-- Photo 2 -->
-      <div class="bg-gray-800 p-4 rounded shadow">
-        <img src="images/photo2.jpg" alt="Life everyday" class="rounded mb-2" />
-        <p class="text-yellow-300 font-semibold">Life Everyday</p>
+     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+  <img src="images/photo2.jpg" alt="Opening Ceremony Of Afcfta" class="rounded mb-2 gallery-item" />
+  <p class="text-yellow-300 font-semibold">Opening Ceremony Of Afcfta</p>
+</div>
+<div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+  <img src="images/photo10.jpg" alt="Graduate in Marketing mgmt" class="rounded mb-2 gallery-item" />
+  <p class="text-yellow-300 font-semibold">Graduate in Marketing mgmt</p>
+</div>
+<div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+  <img src="images/photo4.jpg" alt="My Baptism" class="rounded mb-2 gallery-item" />
+  <p class="text-yellow-300 font-semibold">My Baptism</p>
+</div>
+<div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+  <img src="images/photo8.jpg" alt="God's Will Not Mine" class="rounded mb-2 gallery-item" />
+  <p class="text-yellow-300 font-semibold">God's Will Not Mine</p>
+</div>
+<div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+  <img src="images/photo17.jpg" alt="Accra At Night" class="rounded mb-2 gallery-item" />
+  <p class="text-yellow-300 font-semibold">Accra At Night</p>
+</div>
+<div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+  <img src="images/photo5.jpg" alt="12 Steps program" class="rounded mb-2 gallery-item" />
+  <p class="text-yellow-300 font-semibold">12 Steps program</p>
+  <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+  <img src="images/photo9.jpg" alt="Love" class="rounded mb-2 gallery-item" />
+  <p class="text-yellow-300 font-semibold">Love</p>
+    <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+  <img src="images/photo7.jpg" alt="Family" class="rounded mb-2 gallery-item" />
+  <p class="text-yellow-300 font-semibold">Family</p>
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+  <img src="images/photo12.jpg" alt="Gratitude" class="rounded mb-2 gallery-item" />
+  <p class="text-yellow-300 font-semibold">Gratitude</p>
+</div>
+
       </div>
-      <!-- Photo 3 -->
-      <div class="bg-gray-800 p-4 rounded shadow">
-        <img src="images/photo3.jpg" alt="Life everyday" class="rounded mb-2" />
-        <p class="text-yellow-300 font-semibold">Life Everyday</p>
-      </div>
+    </div>
+
+    <!-- Lightbox for gallery -->
+    <div class="lightbox" id="lightbox">
+      <img src="" alt="Enlarged image" id="lightbox-img" />
     </div>
   </section>
 
@@ -61,5 +111,22 @@
   <footer class="text-center p-6 bg-gray-800 text-sm mt-10">
     © 2025 Pacino. All rights reserved.
   </footer>
+
+  <script>
+    // Lightbox script
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
