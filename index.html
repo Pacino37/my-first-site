@@ -52,34 +52,34 @@
       <img src="images/photo12.jpg" alt="Gratitude" class="rounded mb-2 gallery-item" />
       <p class="text-yellow-300 font-semibold">Gratitude</p>
     </div>
-    
+
+    <!-- Optional: remove or replace if photoX.jpg doesn't exist -->
     <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
-      <img src="images/photoX.jpg" alt="Caption" class="rounded mb-2 gallery-item" />
+      <img src="images/photoX.jpg" alt="Extra Image" class="rounded mb-2 gallery-item" />
       <p class="text-yellow-300 font-semibold">Caption</p>
     </div>
-
-    <div id="lightbox"></div>
-
   </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+    <img src="" alt="Enlarged image" id="lightbox-img" class="max-w-full max-h-full rounded shadow-lg" />
+  </div>
+</section>
+
 <script>
   const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
   const galleryImages = document.querySelectorAll('#gallery-grid img');
 
   galleryImages.forEach(image => {
     image.addEventListener('click', () => {
-      lightbox.innerHTML = `<img src="${image.src}" alt="">`;
+      lightboxImg.src = image.src;
       lightbox.style.display = 'flex';
     });
   });
 
   lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
-    lightbox.innerHTML = '';
+    lightboxImg.src = '';
   });
 </script>
-
-  <!-- Lightbox for gallery -->
-  <div class="lightbox" id="lightbox">
-    <img src="" alt="Enlarged image" id="lightbox-img" />
-  </div>
-</section>
