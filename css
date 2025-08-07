@@ -1,137 +1,121 @@
-/* Global Styles */
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery Section</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom Styles */
+    .gallery-item {
+      width: 100%;
+      height: 12rem; /* Equivalent to Tailwind's h-48 */
+      object-fit: cover;
+      border: 3px solid #facc15; /* Tailwind yellow-400 */
+      border-radius: 0.5rem; /* rounded */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 12px rgba(250, 204, 21, 0.4); /* strong yellow shadow */
+    }
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #121212;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
-}
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(250, 204, 21, 0.6); /* deeper shadow on hover */
+    }
 
-header, footer {
-  background-color: #1e1e1e;
-  padding: 1rem;
-  text-align: center;
-}
+    /* Lightbox styles */
+    #lightbox {
+      cursor: zoom-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
 
-header h1,
-footer p {
-  margin: 0;
-  font-size: 1.2rem;
-}
+  <!-- Gallery Section -->
+  <section id="gallery" class="p-10">
+    <h2 class="text-3xl font-semibold mb-8 text-center text-yellow-300">Gallery</h2>
 
-nav {
-  margin-top: 0.5rem;
-}
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="gallery-grid">
+      <!-- Gallery Items -->
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo13.jpg" alt="Coca Cola Company Visit" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">Coca Cola Company Visit</p>
+      </div>
 
-nav a {
-  color: #f0f0f0;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo2.jpg" alt="Opening Ceremony Of Afcfta" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">Opening Ceremony Of Afcfta</p>
+      </div>
 
-nav a:hover {
-  color: #ffcc00;
-  text-decoration: underline;
-}
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo10.jpg" alt="Graduate in Marketing mgmt" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">Graduate in Marketing mgmt</p>
+      </div>
 
-/* Main Layout */
-main {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo4.jpg" alt="My Baptism" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">My Baptism</p>
+      </div>
 
-/* Section Headings */
-section h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #ffffff;
-}
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo8.jpg" alt="God's Will Not Mine" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">God's Will Not Mine</p>
+      </div>
 
-/* Gallery Styles */
-#gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo17.jpg" alt="Accra At Night" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">Accra At Night</p>
+      </div>
 
-#gallery-grid div {
-  background-color: #1e1e1e;
-  padding: 1rem;
-  border-radius: 12px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo5.jpg" alt="12 Steps program" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">12 Steps program</p>
+      </div>
 
-#gallery-grid div:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-}
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo9.jpg" alt="Love" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">Love</p>
+      </div>
 
-#gallery-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 0.75rem;
-  transition: opacity 0.3s ease;
-}
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo7.jpg" alt="Family" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">Family</p>
+      </div>
 
-#gallery-grid p {
-  color: #ffcc00;
-  font-weight: bold;
-  font-size: 1rem;
-  margin: 0;
-}
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photo12.jpg" alt="Gratitude" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">Gratitude</p>
+      </div>
 
-/* Lightbox Styles */
-#lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.95);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  cursor: zoom-out;
-}
+      <!-- Optional: placeholder -->
+      <div class="bg-gray-800 p-4 rounded shadow cursor-pointer">
+        <img src="images/photoX.jpg" alt="Extra Image" class="gallery-item" />
+        <p class="text-yellow-300 font-semibold mt-2 text-center">Caption</p>
+      </div>
+    </div>
 
-#lightbox img {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-}
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+      <img src="" alt="Enlarged image" id="lightbox-img" class="max-w-full max-h-full rounded shadow-lg" />
+    </div>
+  </section>
 
-/* Responsive */
-@media (max-width: 768px) {
-  main {
-    padding: 1rem;
-  }
+  <!-- JavaScript -->
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const galleryImages = document.querySelectorAll('#gallery-grid img');
 
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    galleryImages.forEach(image => {
+      image.addEventListener('click', () => {
+        lightboxImg.src = image.src;
+        lightbox.style.display = 'flex';
+      });
+    });
 
-  nav a {
-    margin: 0.5rem 0;
-  }
-
-  #gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
-}
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+  </script>
+</body>
+</html>
