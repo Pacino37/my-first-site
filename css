@@ -1,7 +1,96 @@
-my-first-site-main/
-├── index.html
-├── images/
-│   ├── photo13.jpg
-│   ├── photo2.jpg
-│   ├── photo10.jpg
-│   ├── photo11.jpg
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: #f0f0f0;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Gallery Styles */
+#gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+#gallery-grid div {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#gallery-grid div:hover {
+  transform: scale(1.03);
+}
+
+#gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+#gallery-grid p {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* Lightbox Styles */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
